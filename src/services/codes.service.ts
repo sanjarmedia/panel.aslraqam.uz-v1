@@ -3,7 +3,7 @@ import { ICodesHistory } from '../types/codesHistory.types'
 import { ICodesInfo } from '../types/codesInfo.types'
 
 class CodesService {
-   private CODES_URL = ' http://localhost:8080/api'
+   private CODES_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api'
 
    async getCodesHistory(id: string) {
       const encodedId = encodeURIComponent(id)
